@@ -14,7 +14,7 @@ function computer_player() {
 }	
 
 function human_player() {
-  return prompt("Ready? rock, paper, scissors, shoot!");
+ /* return prompt("Ready? rock, paper, scissors, shoot!"); */
 }
 
 function game(human_player, computer_player) {
@@ -63,6 +63,7 @@ function game(human_player, computer_player) {
 // console.log(human_test, comp_test);
 // console.log(game(human_test, comp_test));
 
+/* this is the play 5 rounds part
 
 function match() {
 
@@ -96,11 +97,38 @@ function match() {
   }
 }
 
+*/
+
+const match_report = document.createElement('h3');
+const game_report = document.createElement('h4');
+
+let game_result
+let computer_choice
+
+const btn1 = document.querySelector('#btn1');
+btn1.addEventListener('click', function(e) {
+  computer_choice = computer_player();
+  game_result = game('rock', computer_choice);
+  console.log(e.target);
+})
 
 
-match()
+const btn2 = document.querySelector('#btn2');
+btn2.addEventListener('click', function(e) {
+  computer_choice = computer_player();
+  game_result = game('paper', computer_choice);
+  console.log(e.target);
+})
+
+const btn3 = document.querySelector('#btn3');
+btn3.addEventListener('click', function(e) {
+  computer_choice = computer_player();
+  game_result = game('scissors', computer_choice);
+  console.log(e.target);
+})
 
 
+console.log(human_player);
 
 
 
