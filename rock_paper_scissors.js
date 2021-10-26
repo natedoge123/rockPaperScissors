@@ -102,14 +102,12 @@ function match() {
 const match_report = document.createElement('h3');
 const game_report = document.createElement('h4');
 
-let game_result
-let computer_choice
 
 const btn1 = document.querySelector('#btn1');
 btn1.addEventListener('click', function(e) {
   computer_choice = computer_player();
   game_result = game('rock', computer_choice);
-  console.log(e.target);
+  gameReport.append(game_result);
 })
 
 
@@ -117,24 +115,15 @@ const btn2 = document.querySelector('#btn2');
 btn2.addEventListener('click', function(e) {
   computer_choice = computer_player();
   game_result = game('paper', computer_choice);
-  console.log(e.target);
+  gameReport.append(game_result);
 })
 
 const btn3 = document.querySelector('#btn3');
 btn3.addEventListener('click', function(e) {
   computer_choice = computer_player();
   game_result = game('scissors', computer_choice);
-  console.log(e.target);
+  gameReport.append(game_result);
 })
-
-
-console.log(human_player);
-
-
-
-
-
-
 
 
 
