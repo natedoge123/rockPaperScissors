@@ -24,7 +24,7 @@ function game(human_player, computer_player) {
 
 
   if (human_player == computer_player)  {
-   game_status = "tie"
+   game_status = "tie";
 
   } else if (human_player == "rock") {
 
@@ -57,11 +57,11 @@ function game(human_player, computer_player) {
   return game_status;
 }
 
-let comp_test = computer_player();
-let human_test = human_player();
+// let comp_test = computer_player();
+// let human_test = human_player();
 
-console.log(human_test, comp_test);
-console.log(game(human_test, comp_test));
+// console.log(human_test, comp_test);
+// console.log(game(human_test, comp_test));
 
 
 function match() {
@@ -71,11 +71,37 @@ function match() {
 
   let i = 0;
 
-  while (human_w < 6 && comp_w <6 && i < 10) {
+  while (human_w < 5 && comp_w < 5 && i < 100) {
     i++;
+    let comp_play = computer_player();
+    let human_play = human_player();
 
+    let result = game(human_play, comp_play);  
+
+    if (result == "win" ) {
+      human_w++;
+      console.log("Player Win");
+    } else if (result == "lose") {
+      comp_w++;
+      console.log("Computer Win")
+    } else {
+      console.log("tie");
+    } 
+    console.log(human_w, "-", comp_w);
+  }
+  if (human_w == 5) {
+    console.log("Player match win!");
+  } else {
+    console.log("Computer match win!");
   }
 }
+
+
+
+match()
+
+
+
 
 
 

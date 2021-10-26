@@ -1,2 +1,64 @@
 /* style.css */
 
+/* Intro Section*/
+
+.intro-container {
+  display: flex;
+  flex: 1;
+  flex-direction: horizontal;
+  background: lightslategrey;
+  width: 100%;
+  height: 5%;
+  flex-align: center;
+  justify-content: center;
+  padding: 0.5%;
+}
+
+.intro-container div {
+  text-align: center;
+  color: azure;
+  font-size: 50px;
+}
+
+/* Display the status of the game*/
+
+.gameStat-container {
+  display: flex;
+  flex: 1;
+  flex-direction: horizontal;
+  background: lightslategrey;
+  width: 100%;
+  height: 5%;
+  flex-align: center;
+  justify-content: center;
+  padding: 1%;
+}
+
+.gameStat-container div {
+  text-align: center;
+  color: azure;
+  font-size: 25px;
+}
+
+/* User buttons */
+.button-container {
+  display: flex;
+  flex: 1;
+  flex-direction: horizontal;
+  background: lightslategrey;
+  width: 100%;
+  height: 10%;
+  flex-align: center;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+.button-container div {
+  text-align: center;
+  border: 4px solid lightgrey;
+  padding: 10px;
+  width: 16%;
+  height 5%;
+  font-size: 32px;
+  
+}
