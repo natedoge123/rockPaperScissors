@@ -103,29 +103,33 @@ const match_report = document.createElement('h3');
 const game_report = document.createElement('h4');
 
 
-const btn1 = document.querySelector('#btn1');
-btn1.addEventListener('click', function(e) {
-  computer_choice = computer_player();
-  game_result = game('rock', computer_choice);
-  gameReport.append(game_result);
+
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', function(e)  {
+    if (button.id == 'btn1') {
+      player_choice = 'rock';
+      computer_choice = computer_player();  
+      game_result = game(player_choice, computer_choice)
+  } else if (button.id == 'btn2') {
+      player_choice = 'paper';
+      computer_choice = computer_player();  
+      game_result = game(player_choice, computer_choice)
+  } else if (button.id == 'btn3') {
+      player_choice = 'scissors';
+      computer_choice = computer_player();  
+      game_result = game(player_choice, computer_choice)
+  } else {
+      gameReport.append('what the hell did you do?');
+  }    
+    if (game_result == 'win') {
+
+  } else if (game_result == 'lose') {
+
+  }     
+      
+  })
 })
-
-
-const btn2 = document.querySelector('#btn2');
-btn2.addEventListener('click', function(e) {
-  computer_choice = computer_player();
-  game_result = game('paper', computer_choice);
-  gameReport.append(game_result);
-})
-
-const btn3 = document.querySelector('#btn3');
-btn3.addEventListener('click', function(e) {
-  computer_choice = computer_player();
-  game_result = game('scissors', computer_choice);
-  gameReport.append(game_result);
-})
-
-
-
-
 
