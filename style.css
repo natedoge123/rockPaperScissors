@@ -35,9 +35,11 @@
 }
 
 .gameStat-container div {
+  display: flex;
   text-align: center;
   color: azure;
   font-size: 25px;
+  flex-direction: column;
 }
 
 /* User buttons */
@@ -53,13 +55,35 @@
   padding: 30px;
 }
 
-.button-container.button1 {
+#btn1 {
   text-align: center;
   border: 4px solid black;
   padding: 10px;
   width: 16%;
-  height 5%;
-  font-size: 20px;
-  transition-duration: 0.5s; 
+  height: 5%;
+  font-size: 20px; 
+  margin-right: auto;
+  margin-left: auto;
 }
 
+#btn2 {
+  text-align: center;
+  border: 4px solid black;
+  padding: 10px;
+  width: 16%;
+  height: 5%;
+  font-size: 20px; 
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#btn3 {
+  text-align: center;
+  border: 4px solid black;
+  padding: 10px;
+  width: 16%;
+  height: 5%;
+  font-size: 20px; 
+  margin-right: auto;
+  marign-left: auto;
+}

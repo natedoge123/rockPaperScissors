@@ -60,16 +60,6 @@ function game(human_player, computer_player) {
 }
 
 
-function winMessage(winner) {
-  humanScore = 0;
-  compScore = 0;
-  matchWinner.textConent = winner + ' WIN!';
-  matchReport.appendChild(matchWinner);
-}
-
-
-
-
 const currentScore = document.createElement('h6');
 const matchWinner = document.createElement('h4');
 
@@ -98,24 +88,30 @@ buttons.forEach((button) => {
   } else {
       gameReport.append('what the hell did you do?');
   }    
-
+    matchWinner.textContent = ' '
+    matchReport.appendChild(matchWinner);
 
     if (game_result == 'win') {
       humanScore++;
-      currentScore.textContent = 'Round win' + humanScore + ' - ' + compScore;
+      currentScore.textContent = 'Round win ' + humanScore + ' - ' + compScore;
       gameReport.appendChild(currentScore);
 
       if (humanScore > 2) {
-        winMessage('Human');
+        humanScore = 0;
+        compScore = 0;
+        matchWinner.textContent = 'HUMAN WIN'
+        matchReport.appendChild(matchWinner);
         } 
   } else if (game_result == 'lose') {
       compScore++;
-      currentScore.textContent = 'Round loss' + humanScore + ' - ' + compScore;
+      currentScore.textContent = 'Round loss ' + humanScore + ' - ' + compScore;
       gameReport.appendChild(currentScore);
  
       if (compScore > 2) {
-        winMessage('Computer');
-        console.log('check')
+        humanScore = 0;
+        compScore = 0;
+        matchWinner.textContent = 'COMPUTER WIN'
+        matchReport.appendChild(matchWinner);
         }
   } else {
      currentScore.textContent = 'Round tie ' + humanScore + ' - ' + compScore;
