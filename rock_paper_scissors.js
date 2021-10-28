@@ -13,9 +13,11 @@ function computer_player() {
  return computer;
 }	
 
+
 function human_player() {
  /* return prompt("Ready? rock, paper, scissors, shoot!"); */
 }
+
 
 function game(human_player, computer_player) {
  
@@ -57,58 +59,30 @@ function game(human_player, computer_player) {
   return game_status;
 }
 
-// let comp_test = computer_player();
-// let human_test = human_player();
 
-// console.log(human_test, comp_test);
-// console.log(game(human_test, comp_test));
-
-/* this is the play 5 rounds part
-
-function match() {
-
-  let human_w = 0;
-  let comp_w = 0;
-
-  let i = 0;
-
-  while (human_w < 5 && comp_w < 5 && i < 100) {
-    i++;
-    let comp_play = computer_player();
-    let human_play = human_player();
-
-    let result = game(human_play, comp_play);  
-
-    if (result == "win" ) {
-      human_w++;
-      console.log("Player Win");
-    } else if (result == "lose") {
-      comp_w++;
-      console.log("Computer Win")
-    } else {
-      console.log("tie");
-    } 
-    console.log(human_w, "-", comp_w);
-  }
-  if (human_w == 5) {
-    console.log("Player match win!");
-  } else {
-    console.log("Computer match win!");
-  }
+function winMessage(winner) {
+  humanScore = 0;
+  compScore = 0;
+  matchWinner.textConent = winner + ' WIN!';
+  matchReport.appendChild(matchWinner);
 }
 
-*/
-
-const match_report = document.createElement('h3');
-const game_report = document.createElement('h4');
 
 
+
+const currentScore = document.createElement('h6');
+const matchWinner = document.createElement('h4');
+
+let humanScore = 0;
+let compScore = 0;
 
 
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
   button.addEventListener('click', function(e)  {
+
+
     if (button.id == 'btn1') {
       player_choice = 'rock';
       computer_choice = computer_player();  
@@ -124,11 +98,28 @@ buttons.forEach((button) => {
   } else {
       gameReport.append('what the hell did you do?');
   }    
+
+
     if (game_result == 'win') {
+      humanScore++;
+      currentScore.textContent = 'Round win' + humanScore + ' - ' + compScore;
+      gameReport.appendChild(currentScore);
 
+      if (humanScore > 2) {
+        winMessage('Human');
+        } 
   } else if (game_result == 'lose') {
-
-  }     
+      compScore++;
+      currentScore.textContent = 'Round loss' + humanScore + ' - ' + compScore;
+      gameReport.appendChild(currentScore);
+ 
+      if (compScore > 2) {
+        winMessage('Computer');
+        console.log('check')
+        }
+  } else {
+     currentScore.textContent = 'Round tie ' + humanScore + ' - ' + compScore;
+  }
       
   })
 })
